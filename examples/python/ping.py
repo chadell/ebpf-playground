@@ -15,7 +15,7 @@ int xdp(struct xdp_md *ctx) {
 
   if (is_icmp_ping_request(data, data_end)) {
         bpf_trace_printk("Got ping packet");
-        # play with XDP_DROP
+        // play with XDP_DROP
         return XDP_PASS;
   }
 
@@ -25,7 +25,9 @@ int xdp(struct xdp_md *ctx) {
 
 interface = "lo" #2
 b = BPF(text=program) #3
+
 fx = b.load_func("xdp", BPF.XDP) #4
+
 # XDP will be the first program hit when a packet is received ingress
 BPF.attach_xdp(interface, fx, 0)
 
