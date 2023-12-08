@@ -1,1 +1,7 @@
 *.o
+.venv/
+.terraform*
+nornir.log
+terraform.tfstate*
+.secrets
+.vscode/
