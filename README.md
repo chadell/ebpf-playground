@@ -249,12 +249,12 @@ key 4B value 32B max_entries 1 memlock 4096B
 ```
 
 ```json
-root@ebpf-lab-1:~/ebpf-playground/examples/c# bpftool map dump name hello.rodata
+root@ebpf-lab-1:~/ebpf-playground/examples/c# bpftool map dump name hello.bss
 [{
         "value": {
-            ".rodata": [{
-                "hello.____fmt": "Packet Received %d"
-            }
+            ".bss": [{
+                    "counter": 703
+                }
             ]
         }
     }
